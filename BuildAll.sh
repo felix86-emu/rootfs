@@ -6,5 +6,5 @@ set -e
 
 sudo docker build -t $ID ./Ubuntu-24.04
 sudo docker create --name Ubuntu-24.04 $ID
-sudo docker export Ubuntu-24.04 | gzip > Ubuntu-24.04.tar.gz
+sudo docker cp Ubuntu-24.04:/archive.tar.gz ./Ubuntu-24.04.tar.gz
 sudo docker rm Ubuntu-24.04
