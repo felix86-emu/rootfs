@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update
-apt-get install --no-install-recommends -y wine64 
+apt-get upgrade -y
 
 # Create a .tar.gz inside the container while excluding the tempfs directories
 touch archive.tar.gz
