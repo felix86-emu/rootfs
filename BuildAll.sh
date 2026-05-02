@@ -16,6 +16,7 @@ build_and_export() {
     sudo docker rmi "$name"
 }
 
+build_and_export Ubuntu-26.04
 build_and_export Ubuntu-24.04
 build_and_export Ubuntu-24.04-NoWine
 build_and_export Tiny
