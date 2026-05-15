@@ -19,25 +19,18 @@ let
       name = name;
       tag = "latest";
       fromImage = baseImage;
-      contents = [
-        (pkgs.buildEnv {
-          name = "fhs-rootfs";
-          paths = packages;
-          pathsToLink = [
-            "/bin"
-            "/etc"
-            "/lib"
-            "/lib64"
-            "/sbin"
-          ];
-        })
-      ];
+      contents = packages;
     };
 
   commonPackages = import ./packages.nix pkgs;
 in
 
 {
+  nix = mkImage {
+    name = "nix";
+    baseImage = baseImages.nix."2.32.8";
+    packages = commonPackages;
+  };
   ubuntu = mkImage {
     name = "ubuntu";
     baseImage = baseImages.ubuntu."24_04";
