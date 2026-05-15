@@ -49,7 +49,7 @@ let
 
     # gaming
     mangohud
-    wine # 32-bit & 64-bit on x86_64-linux, else 32-bit
+    winePackages.base # 32-bit & 64-bit on x86_64-linux, else 32-bit
 
     # other
     protobuf
