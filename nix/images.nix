@@ -22,7 +22,11 @@ let
       contents = packages;
     };
 
-  commonPackages = import ./packages.nix pkgs;
+  # TODO: create an image for each type (minimal, full)
+  commonPackages = import ./packages.nix {
+    inherit pkgs lib;
+    type = "minimal";
+  };
 in
 
 {
